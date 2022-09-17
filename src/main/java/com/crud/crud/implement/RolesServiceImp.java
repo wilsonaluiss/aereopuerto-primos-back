@@ -28,7 +28,7 @@ public class RolesServiceImp implements RolesServicio {
 
     @Override
     public Roles listarId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return rolesRepositorio.findById(id);
     }
 
     @Override
@@ -38,12 +38,14 @@ public class RolesServiceImp implements RolesServicio {
 
     @Override
     public Roles edit(Roles r) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return rolesRepositorio.save(r);
     }
 
     @Override
     public Roles delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Roles r = rolesRepositorio.findById(id);
+        r.setEstado("Inactivo");
+        return rolesRepositorio.save(r);
     }
     
 }

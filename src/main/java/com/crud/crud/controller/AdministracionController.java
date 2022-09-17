@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.crud.crud.service.RolesServicio;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 
 /**
  *
@@ -31,8 +33,7 @@ public class AdministracionController {
     @Autowired
     RolesServicio rolesServicio;
     
-    @GetMapping
-    @ApiOperation(value = "asdfasfda", notes = "afdasdfasfd")
+    @GetMapping()
     public List<Roles>listar(){
         return rolesServicio.listar();
     }
@@ -42,6 +43,21 @@ public class AdministracionController {
         return rolesServicio.add(r);
     }
     
+    @GetMapping(path ={"/{id}"})
+    public Roles listarId(@PathVariable("id") int id){
+        return rolesServicio.listarId(id);
+    }
+    
+    @PutMapping(path ={"/actualizar/{id}"})
+    public Roles edit(@RequestBody Roles r, @PathVariable("id") int id){
+        r.setCodigo_usuario(id);
+        return rolesServicio.edit(r);
+    }
+    
+    @PutMapping(path ={"/eliminar/{id}"})
+    public Roles eliminar(@PathVariable("id") int id){
+        return rolesServicio.delete(id);
+    }
     
 
 }
