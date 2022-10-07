@@ -4,18 +4,19 @@
  */
 package com.crud.crud.repository;
 
-import java.util.List;
 import com.crud.crud.model.Roles;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Wilson
  */
-public interface RolesRepositorio extends Repository <Roles, Integer>{
-    List<Roles>findAll();
-    Roles findById(int id);
-    Roles save(Roles r);
-    void delete(Roles r);
+public interface RolesRepositorio extends CrudRepository<Roles, Integer>{
+    
+    /*@Query(value= "select * from usuarios_internos u where u.nombre_usuario = :usuario and u.contrasena = :contrasena", nativeQuery = true )
+    Optional<Roles> usuariosInternos (@Param ("usuario")String usuario, @Param ("contrasena")String contraseña);*/
+    
+    Roles findByNombreUsuario(String pUsuario);
+    
     
 }

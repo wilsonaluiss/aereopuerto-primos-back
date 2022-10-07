@@ -4,67 +4,76 @@
  */
 package com.crud.crud.model;
 
-
 import javax.persistence.*;
-@Entity
-@Table(name ="usuarios", schema = "public")
+import static javax.persistence.GenerationType.IDENTITY;
+import lombok.Builder;
+
 /**
  *
  * @author Wilson
  */
+@Entity
+@Builder
+@Table(name = "usuarios_internos", schema = "public")
+public class Roles implements java.io.Serializable {
 
+    private int idUsuario;
 
-public class Roles {
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo_usuario;
-    
-    @Column
-    private String nombre_usuario;
-    
-    @Column
-    private String usuario;
-    
-    @Column
+    private String nombreUsuario;
+
     private String contrasena;
-    
-    @Column
-    private String rol;
-    
-    @Column
-    private String codigo_aereopuerto;
-    
-    @Column
-    private String puesto;
-    
-    @Column
-    private String estado;
 
-    public int getCodigo_usuario() {
-        return codigo_usuario;
+    private String estadoUsuario;
+
+    private String telefonoUsuario;
+
+    private String direccionUsuario;
+
+    private String usuarioCrea;
+
+    private String usuarioModifica;
+
+    private int idAereopuerto;
+
+    private int idRol;
+
+    public Roles() {
     }
 
-    public void setCodigo_usuario(int codigo_usuario) {
-        this.codigo_usuario = codigo_usuario;
+    public Roles(int idUsuario, String nombreUsuario, String contrasena, String estadoUsuario, String telefonoUsuario, String direccionUsuario, String usuarioCrea, String usuarioModifica, int idAereopuerto, int idRol) {
+        this.idUsuario = idUsuario;
+        this.nombreUsuario = nombreUsuario;
+        this.contrasena = contrasena;
+        this.estadoUsuario = estadoUsuario;
+        this.telefonoUsuario = telefonoUsuario;
+        this.direccionUsuario = direccionUsuario;
+        this.usuarioCrea = usuarioCrea;
+        this.usuarioModifica = usuarioModifica;
+        this.idAereopuerto = idAereopuerto;
+        this.idRol = idRol;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id_usuario", unique = true, nullable = false)
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public String getUsuario() {
-        return usuario;
+    @Column(name = "nombre_usuario", nullable = false)
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
+    @Column(name = "contrasena", nullable = false)
     public String getContrasena() {
         return contrasena;
     }
@@ -73,38 +82,67 @@ public class Roles {
         this.contrasena = contrasena;
     }
 
-    public String getRol() {
-        return rol;
+    @Column(name = "estado_usuario", nullable = false)
+    public String getEstadoUsuario() {
+        return estadoUsuario;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setEstadoUsuario(String estadoUsuario) {
+        this.estadoUsuario = estadoUsuario;
     }
 
-    public String getCodigo_aereopuerto() {
-        return codigo_aereopuerto;
+    @Column(name = "telefono_usuario", nullable = false)
+    public String getTelefonoUsuario() {
+        return telefonoUsuario;
     }
 
-    public void setCodigo_aereopuerto(String codigo_aereopuerto) {
-        this.codigo_aereopuerto = codigo_aereopuerto;
+    public void setTelefonoUsuario(String telefonoUsuario) {
+        this.telefonoUsuario = telefonoUsuario;
     }
 
-    public String getPuesto() {
-        return puesto;
+    @Column(name = "direccion_usuario", nullable = false)
+    public String getDireccionUsuario() {
+        return direccionUsuario;
     }
 
-    public void setPuesto(String puesto) {
-        this.puesto = puesto;
+    public void setDireccionUsuario(String direccionUsuario) {
+        this.direccionUsuario = direccionUsuario;
     }
 
-    public String getEstado() {
-        return estado;
+    @Column(name = "usuario_crea", nullable = false)
+    public String getUsuarioCrea() {
+        return usuarioCrea;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setUsuarioCrea(String usuarioCrea) {
+        this.usuarioCrea = usuarioCrea;
     }
-    
-    
-    
+
+    @Column(name = "usuario_modifica", nullable = false)
+    public String getUsuarioModifica() {
+        return usuarioModifica;
+    }
+
+    public void setUsuarioModifica(String usuarioModifica) {
+        this.usuarioModifica = usuarioModifica;
+    }
+
+    @Column(name = "id_aereopuerto", nullable = false)
+    public int getIdAereopuerto() {
+        return idAereopuerto;
+    }
+
+    public void setIdAereopuerto(int idAereopuerto) {
+        this.idAereopuerto = idAereopuerto;
+    }
+
+    @Column(name = "id_rol", nullable = false)
+    public int getIdRol() {
+        return idRol;
+    }
+
+    public void setIdRol(int idRol) {
+        this.idRol = idRol;
+    }
+
 }

@@ -8,7 +8,7 @@ package com.crud.crud.controller;
 import com.crud.crud.model.Roles;
 import com.crud.crud.model.aereopuerto;
 import com.crud.crud.service.aereopuertoServicio;
-import io.swagger.annotations.Api;
+//import io.swagger.annotations.Api;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author conco
  */
-@Api(tags="aeropuerto")
+//@Api(tags="aeropuerto")
 @RestController
 @RequestMapping({"/aeropuerto"})
 public class aereopuertoController {

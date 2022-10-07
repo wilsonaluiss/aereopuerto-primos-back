@@ -21,7 +21,7 @@ public class RolesServiceImp implements RolesServicio {
     @Autowired
     private RolesRepositorio rolesRepositorio;
 
-    @Override
+   /* @Override
     public List<Roles> listar() {
         return rolesRepositorio.findAll();
     }
@@ -44,8 +44,33 @@ public class RolesServiceImp implements RolesServicio {
     @Override
     public Roles delete(int id) {
         Roles r = rolesRepositorio.findById(id);
-        r.setEstado("Inactivo");
+        r.setEstado_usuario("Inactivo");
         return rolesRepositorio.save(r);
+    }*/
+
+    @Override
+    public List<Roles> listar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Roles listarId(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Roles add(Roles r) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Roles edit(Roles r) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Roles delete(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
