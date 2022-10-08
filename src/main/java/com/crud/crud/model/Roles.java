@@ -14,27 +14,18 @@ import lombok.Builder;
  */
 @Entity
 @Builder
-@Table(name = "usuarios_internos", schema = "public")
+@Table(name = "bodega", schema = "public")
 public class Roles implements java.io.Serializable {
 
     private int idUsuario;
-
     private String nombreUsuario;
-
     private String contrasena;
-
     private String estadoUsuario;
-
     private String telefonoUsuario;
-
     private String direccionUsuario;
-
     private String usuarioCrea;
-
     private String usuarioModifica;
-
     private int idAereopuerto;
-
     private int idRol;
 
     public Roles() {

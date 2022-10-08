@@ -5,15 +5,11 @@
 package com.crud.crud.service;
 
 import com.crud.crud.dto.DatosRolesDto;
-import com.crud.crud.dto.RolesDto;
 import com.crud.crud.model.Roles;
 import com.crud.crud.repository.RolesRepositorio;
-import java.util.Optional;
-import javax.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,6 +58,7 @@ public class RolesService {
             }else{
                 return false;
             }
+            LOG.debug(pRol.toString());
             return true;
             
         } catch (Exception e) {
