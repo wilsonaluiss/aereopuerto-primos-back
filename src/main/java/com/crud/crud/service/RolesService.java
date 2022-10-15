@@ -5,8 +5,10 @@
 package com.crud.crud.service;
 
 import com.crud.crud.dto.DatosRolesDto;
+import com.crud.crud.dto.RolesDto;
 import com.crud.crud.model.Roles;
 import com.crud.crud.repository.RolesRepositorio;
+import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,9 +28,9 @@ public class RolesService {
     @Autowired
     RolesRepositorio rolesRepositorio;
 
-    /*public Optional<Roles> getUsuarioByUserAndPass(RolesDto dto){
+    public Optional<Roles> getUsuarioByUserAndPass(RolesDto dto){
         return this.rolesRepositorio.usuariosInternos(dto.getUsuario(),dto.getPassword());
-    }*/
+    }
     /**
      * Crea un nuevo Evento
      *
@@ -102,5 +104,9 @@ public class RolesService {
         }else{
             return false;
         }
+    }
+    
+    public Iterable<Roles> obtenerRoles(){
+        return rolesRepositorio.findAll();
     }
 }

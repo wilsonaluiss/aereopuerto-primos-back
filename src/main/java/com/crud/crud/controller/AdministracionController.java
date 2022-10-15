@@ -15,14 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.crud.crud.service.RolesServicio;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 //import io.swagger.annotations.Api;
 //import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,8 +35,6 @@ import org.slf4j.LoggerFactory;
  */
 //@Api (tags = "Roles administrativos")
 @RestController
-@RequestMapping({"/usuarios"})
-
 public class AdministracionController {
     
     final static Logger LOG = LoggerFactory.getLogger(AdministracionController.class);
@@ -50,11 +45,8 @@ public class AdministracionController {
     /*@Autowired
     RolesServicio rolesServicio;*/
     
-    /*@GetMapping()
-    public List<Roles>listar(){
-        return rolesServicio.listar();
-    }
     
+    /*
     @PostMapping
     public Roles agregar(@RequestBody Roles r){
         return rolesServicio.add(r);
@@ -77,12 +69,12 @@ public class AdministracionController {
     }*/
     
     
-    /*@PostMapping(path = "/login")
+    @PostMapping(path = "/login")
     @ResponseStatus(HttpStatus.OK)
     //@ApiOperation(value = "Obtiene detalle de los eventos", notes = "")
     public ResponseEntity<Optional<Roles>> obtenerAsuetosCreados(@RequestBody RolesDto dto) {
         return ResponseEntity.ok(rolesService.getUsuarioByUserAndPass(dto));
-    }*/
+    }
     
       
     //Ingres datos en la tabla de usuarios_internos
@@ -92,7 +84,7 @@ public class AdministracionController {
             return rolesService.crearRol(roles);
         } catch (Exception e) {
             LOG.error("Error" + e);
-            return null;
+            return false;
         }
     }
     
@@ -102,7 +94,7 @@ public class AdministracionController {
     }*/
     
     @PutMapping(value = "/modificar/{idUsuario}")
-    public Boolean actualizarAerolinea(@Valid @PathVariable Integer idUsuario, @RequestBody DatosRolesDto dto) {
+    public Boolean actualizarUsuario(@Valid @PathVariable Integer idUsuario, @RequestBody DatosRolesDto dto) {
         try {
             return rolesService.modificarUsuario(idUsuario, dto);
         } catch (Exception e) {
@@ -111,7 +103,10 @@ public class AdministracionController {
         }
     }
     
-    
+    @GetMapping(value = "/obtenerUsuarios/todos")
+    public List<Roles> obtenerAllUsuarios() {
+        return (List<Roles>) rolesService.obtenerRoles();
+    }
     
     
 

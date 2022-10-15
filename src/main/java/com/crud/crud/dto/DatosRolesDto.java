@@ -12,9 +12,8 @@ import lombok.Data;
  *
  * @author Wilson
  */
-
-@lombok.AllArgsConstructor
 @Data
+@lombok.AllArgsConstructor
 @lombok.NoArgsConstructor
 public class DatosRolesDto {
     
