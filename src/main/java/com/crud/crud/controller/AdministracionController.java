@@ -78,7 +78,7 @@ public class AdministracionController {
     
       
     //Ingres datos en la tabla de usuarios_internos
-    @PostMapping(path = "/creaRol")
+    @PostMapping(path = "/{creaRol}")
     public Boolean crearRoless (@Valid @RequestBody Roles roles){
         try {
             return rolesService.crearRol(roles);

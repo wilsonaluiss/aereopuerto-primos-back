@@ -5,12 +5,10 @@
  */
 package com.crud.crud.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Table;
+import lombok.Builder;
 
 /**
  *
@@ -18,32 +16,40 @@ import javax.persistence.Table;
  */
 
 @Entity
+@Builder
 @Table(name ="aereopuerto", schema = "public")
-public class aereopuerto {
-     @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_aereopuerto;
-     
-     @Column
+public class aereopuerto implements java.io.Serializable{
+    
+     private int id_aereopuerto;
      private String nombre_aereopuerto;
-     
-     @Column
      private String ubicacion_aereopuerto;
-     
-     @Column
      private String estado;
 
+    public aereopuerto() {
+    }
+
+    public aereopuerto(int id_aereopuerto, String nombre_aereopuerto, String ubicacion_aereopuerto, String estado) {
+        this.id_aereopuerto = id_aereopuerto;
+        this.nombre_aereopuerto = nombre_aereopuerto;
+        this.ubicacion_aereopuerto = ubicacion_aereopuerto;
+        this.estado = estado;
+    }
+     
+     
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id_aereopuerto", unique = true, nullable = false) 
     public int getId_aereopuerto() {
         return id_aereopuerto;
     }
-
+    
+  
     public void setId_aereopuerto(int id_aereopuerto) {
         this.id_aereopuerto = id_aereopuerto;
     }
 
     
-
+@Column(name = "nombre_aereopuerto", nullable = false)
     public String getNombre_aereopuerto() {
         return nombre_aereopuerto;
     }
@@ -52,6 +58,7 @@ public class aereopuerto {
         this.nombre_aereopuerto = nombre_aereopuerto;
     }
 
+    @Column(name = "ubicacion_aereopuerto", nullable = false)
     public String getUbicacion_aereopuerto() {
         return ubicacion_aereopuerto;
     }
@@ -60,6 +67,7 @@ public class aereopuerto {
         this.ubicacion_aereopuerto = ubicacion_aereopuerto;
     }
 
+    @Column(name = "estado", nullable = false)
     public String getEstado() {
         return estado;
     }
