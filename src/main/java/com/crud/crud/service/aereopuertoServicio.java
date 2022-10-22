@@ -68,15 +68,9 @@ public class aereopuertoServicio {
         }
 
     }
-    
-    
-    
-    
 
     public aereopuerto traerIdAereopuerto(int idAereopuerto) {
         LOG.debug("Buscando Aereopuerto " + idAereopuerto);
-       
-        
         try {
             return AereopuertoRepositorio.traerAereopuertoById(idAereopuerto);
         } catch (Exception e) {

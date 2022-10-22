@@ -10,8 +10,10 @@ import com.crud.crud.Projection.avionesProyection;
 import com.crud.crud.Projection.nombreAereolineaProyection;
 import com.crud.crud.Projection.nombreAereopuertoProyection;
 import com.crud.crud.dto.avionesDto;
+import com.crud.crud.model.aereopuerto;
 import com.crud.crud.model.aviones;
 import com.crud.crud.repository.avionesRepositorio;
+import static com.crud.crud.service.aereopuertoServicio.LOG;
 import static java.util.Collections.list;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -31,8 +33,6 @@ public class avionesServicio {
     
    @Autowired
    avionesRepositorio AvionesRepositorio;
-   
-   
    
    public Boolean crearAvion (aviones Avion){
        try {
@@ -86,5 +86,15 @@ public class avionesServicio {
     
     public List<AvionProyection> obtenerAvion(){
         return(List<AvionProyection>)AvionesRepositorio.obtenerAvion();
+    }
+    
+    public aviones traerAvionById(int idAvion) {
+        LOG.debug("Buscando Avion " + idAvion);
+        try {
+            return AvionesRepositorio.traerAvionById(idAvion);
+        } catch (Exception e) {
+            LOG.error("Error: " + e);
+            return null;
+        }
     }
 }

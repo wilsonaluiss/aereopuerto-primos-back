@@ -34,8 +34,6 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200/")
 public class aereopuertoController {
 
-    
-
     @Autowired
     aereopuertoServicio AereopuertoServicio;
 
@@ -66,21 +64,17 @@ public class aereopuertoController {
         return AereopuertoServicio.delete(id);
     }
      */
-
-    
     @PostMapping(path = "/creaAereopuerto")
     public Boolean CrearAereopuerto(@Valid @RequestBody aereopuerto Aereo) {
         try {
             return AereopuertoServicio.crearAereopuerto(Aereo);
         } catch (Exception e) {
             LOG.error("Error" + e);
-          return null;
+            return null;
         }
     }
-    
-    
-   
-     @PutMapping(value = "/modificar/{idAereopuerto}")
+
+    @PutMapping(value = "/modificar/{idAereopuerto}")
     public Boolean actualizarAereopuerto(@Valid @PathVariable Integer idAereopuerto, @RequestBody DatosAereopuertoDTO dto) {
         try {
             return AereopuertoServicio.modificarAereopuerto(idAereopuerto, dto);
@@ -89,32 +83,24 @@ public class aereopuertoController {
             return false;
         }
     }
-    
-    
-    
-     @GetMapping(value = "/traer/{idAereopuerto}")
+
+    @GetMapping(value = "/traer/{idAereopuerto}")
     public aereopuerto traerIdAereopuerto(@Valid @PathVariable Integer idAereopuerto) {
         try {
             return AereopuertoServicio.traerIdAereopuerto(idAereopuerto);
         } catch (Exception e) {
             LOG.error("Error: " + e);
             return null;
-        } 
+        }
     }
-    
-    
-    
+
     @GetMapping(value = "/listar/")
-    public List <aereopuerto> listarAereopuerto(){
+    public List<aereopuerto> listarAereopuerto() {
         try {
             return AereopuertoServicio.listarAereopuerto();
         } catch (Exception e) {
             return null;
         }
     }
-    
-    
-
-    
 
 }

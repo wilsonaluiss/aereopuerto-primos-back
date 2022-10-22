@@ -18,19 +18,15 @@ import org.springframework.data.repository.query.Param;
  * @author conco
  */
 public interface aereopuertoRepositorio extends CrudRepository<aereopuerto, Integer> {
-    
+
 
     /*
     aereopuerto findByNombre_aereopuerto(String pAereopuerto);
-    */
-    
-   @Query(value ="select *from aereopuerto \n" +
-"    where id_aereopuerto = :id_aereopuerto", nativeQuery = true) 
-   aereopuerto traerAereopuertoById(
-       @Param("id_aereopuerto")  int id_aereopuerto  
-   );
-   
-   
-    
-    
+     */
+    @Query(value = "select *from aereopuerto \n"
+            + "    where id_aereopuerto = :id_aereopuerto", nativeQuery = true)
+    aereopuerto traerAereopuertoById(
+            @Param("id_aereopuerto") int id_aereopuerto
+    );
+
 }

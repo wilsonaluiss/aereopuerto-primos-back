@@ -9,15 +9,19 @@ import com.crud.crud.Projection.AvionProyection;
 import com.crud.crud.Projection.avionesProyection;
 import com.crud.crud.Projection.nombreAereolineaProyection;
 import com.crud.crud.Projection.nombreAereopuertoProyection;
+import com.crud.crud.model.aereopuerto;
 import com.crud.crud.model.aviones;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author conco
  */
+@Service
 public interface avionesRepositorio extends CrudRepository<aviones, Integer> {
 
     @Query(value = "select a.id_avion, a.no_placa, a.capacidad_asientos , a.estado_avion , a.dimensiones, a2.nombre_aereolinea,a3.nombre_aereopuerto \n"
@@ -34,4 +38,9 @@ public interface avionesRepositorio extends CrudRepository<aviones, Integer> {
 
     @Query(value = "select id_avion, no_placa from aviones ", nativeQuery = true)
     List<AvionProyection> obtenerAvion();
+    
+    @Query(value = "select * from aviones a where id_avion =:id_avion ", nativeQuery = true)
+    aviones traerAvionById(
+            @Param("id_avion") int id_avion
+    );
 }
