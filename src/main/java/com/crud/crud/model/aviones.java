@@ -23,7 +23,7 @@ import lombok.Builder;
 @Table(name ="aviones", schema = "public")
 public class aviones implements java.io.Serializable {
     private int id_avion;
-    private int no_placa; 
+    private String no_placa; 
     private int capacidad_asientos;
     private String estado_avion;
     private String dimensiones;
@@ -33,7 +33,7 @@ public class aviones implements java.io.Serializable {
     public aviones() {
     }
 
-    public aviones(int id_avion, int no_placa, int capacidad_asientos, String estado_avion, String dimensiones, int id_aereolinea, int id_aereopuerto) {
+    public aviones(int id_avion, String no_placa, int capacidad_asientos, String estado_avion, String dimensiones, int id_aereolinea, int id_aereopuerto) {
         this.id_avion = id_avion;
         this.no_placa = no_placa;
         this.capacidad_asientos = capacidad_asientos;
@@ -56,17 +56,20 @@ public class aviones implements java.io.Serializable {
 
     
     @Column(name = "no_placa", nullable = false)
-    public int getNo_placa() {
+    public String getNo_placa() {
         return no_placa;
     }
 
-    public void setNo_placa(int no_placa) {
+    public void setNo_placa(String no_placa) {
         this.no_placa = no_placa;
     }
+    
 @Column(name = "capacidad_asientos", nullable = false)
     public int getCapacidad_asientos() {
         return capacidad_asientos;
     }
+
+    
 
     public void setCapacidad_asientos(int capacidad_asientos) {
         this.capacidad_asientos = capacidad_asientos;

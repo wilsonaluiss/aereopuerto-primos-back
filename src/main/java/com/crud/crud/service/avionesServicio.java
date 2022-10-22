@@ -5,7 +5,9 @@
  */
 package com.crud.crud.service;
 
+import com.crud.crud.Projection.AvionProyection;
 import com.crud.crud.Projection.avionesProyection;
+import com.crud.crud.Projection.nombreAereolineaProyection;
 import com.crud.crud.Projection.nombreAereopuertoProyection;
 import com.crud.crud.dto.avionesDto;
 import com.crud.crud.model.aviones;
@@ -78,4 +80,11 @@ public class avionesServicio {
         return(List<nombreAereopuertoProyection>)AvionesRepositorio.traerNombreAereopuerto();
     }
     
+    public List<nombreAereolineaProyection> traerNombreAereolinea(){
+        return(List<nombreAereolineaProyection>)AvionesRepositorio.traerNombreAereolinea();
+    }
+    
+    public List<AvionProyection> obtenerAvion(){
+        return(List<AvionProyection>)AvionesRepositorio.obtenerAvion();
+    }
 }

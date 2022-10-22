@@ -5,7 +5,9 @@
  */
 package com.crud.crud.controller;
 
+import com.crud.crud.Projection.AvionProyection;
 import com.crud.crud.Projection.avionesProyection;
+import com.crud.crud.Projection.nombreAereolineaProyection;
 import com.crud.crud.Projection.nombreAereopuertoProyection;
 import static com.crud.crud.controller.AdministracionController.LOG;
 import com.crud.crud.dto.DatosAereopuertoDTO;
@@ -52,10 +54,6 @@ public class avionController {
        }
        
        
-       
-       
-       
-       
           @PutMapping(value = "/modificar/{idAvion}")
      public Boolean modificarAvion (@Valid @PathVariable Integer idAvion, @RequestBody avionesDto dto){
               try {
@@ -81,6 +79,13 @@ public class avionController {
     }
     
     
+    @GetMapping(value= "/obtenernombreAereolinea")
+    public List <nombreAereolineaProyection> traerNombreAereolinea(){
+        return AvionServicio.traerNombreAereolinea();
+    }
     
-    
+    @GetMapping(value= "/obtenerAviones")
+    public List <AvionProyection> obtenerAvion(){
+        return AvionServicio.obtenerAvion();
+    }
 }

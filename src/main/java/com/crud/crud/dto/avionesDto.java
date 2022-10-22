@@ -12,7 +12,7 @@ package com.crud.crud.dto;
 public class avionesDto {
    
     private int id_avion;
-    private int no_placa;
+    private String no_placa;
     private int capacidad_asientos;
     private String estado_avion;
     private String dimensiones;
@@ -22,7 +22,7 @@ public class avionesDto {
     public avionesDto() {
     }
 
-    public avionesDto(int no_placa, int capacidad_asientos, String estado_avion, String dimensiones, int id_aereolinea, int id_aereopuerto) {
+    public avionesDto(String no_placa, int capacidad_asientos, String estado_avion, String dimensiones, int id_aereolinea, int id_aereopuerto) {
         this.no_placa = no_placa;
         this.capacidad_asientos = capacidad_asientos;
         this.estado_avion = estado_avion;
@@ -39,14 +39,14 @@ public class avionesDto {
         this.id_avion = id_avion;
     }
 
-    
-    public int getNo_placa() {
+    public String getNo_placa() {
         return no_placa;
     }
 
-    public void setNo_placa(int no_placa) {
+    public void setNo_placa(String no_placa) {
         this.no_placa = no_placa;
     }
+
 
     public int getCapacidad_asientos() {
         return capacidad_asientos;
