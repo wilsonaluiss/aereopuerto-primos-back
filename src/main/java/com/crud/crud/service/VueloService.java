@@ -4,12 +4,12 @@
  */
 package com.crud.crud.service;
 
-import com.crud.crud.dto.VueloDosDto;
-import com.crud.crud.dto.VueloDto;
+
+import com.crud.crud.dto.vueloDto;
 import com.crud.crud.model.AsientosModel;
 import com.crud.crud.model.VueloModel;
 import com.crud.crud.repository.AsientosRepository;
-import com.crud.crud.repository.GeneralRepository;
+
 import com.crud.crud.repository.VueloRepository;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -32,62 +32,20 @@ public class VueloService {
     @Autowired
     VueloRepository vueloRepository;
 
-    @Autowired
-    AsientosRepository asientosRepository;
 
-    
-    @Autowired
-    GeneralRepository generalRepository;
-
-    /*public Boolean crearVuelod(VueloModel pVuelo) {
-        LOG.debug("Creando vuelo " + pVuelo.toString());
-        //Optional<VueloModel> vuelo = vueloRepository.findById(pVuelo.getIdVuelo());
+    public Boolean crearVuelo(VueloModel Vuelo){
         try {
-            vueloRepository.save(pVuelo);
+            vueloRepository.save(Vuelo);
             return true;
         } catch (Exception e) {
-            LOG.error("ERROR" + e);
-            return false;
+            log.error("error"+e);
+           return false;
         }
-    }*/
-    public Boolean crearVuelo(VueloDto pVuelo) {
-        LOG.debug("Creando vuelo " + pVuelo.toString());
-        VueloModel vuelo = new VueloModel();
-        //AsientosModel asiento = new AsientosModel();
-        try {
-            vuelo.setOrigen(pVuelo.getOrigen());
-            vuelo.setDestino(pVuelo.getDestino());
-            vuelo.setHoraSalida(pVuelo.getHoraSalida());
-            vuelo.setHoraLlegada(pVuelo.getHoraLlegada());
-            vuelo.setCostoAsientos(pVuelo.getCostoAsientos());
-            vuelo.setEstadoVuelo(pVuelo.getEstadoVuelo());
-            vuelo.setUsuarioCrea(pVuelo.getUsuarioCrea());
-            vuelo.setUsuarioModifica(pVuelo.getUsuarioModifica());
-            vuelo.setIdAvion(pVuelo.getIdAvion());
-            vuelo.setIdTripulacion(pVuelo.getIdTripulacion());
-            final VueloModel vuelos = vueloRepository.save(vuelo);
-
-            pVuelo.getUbicacionAsiento().forEach(ubicacion -> {
-                AsientosModel asiento = new AsientosModel();
-                asiento.setNombreAsiento(pVuelo.getNombreAsiento());
-                asiento.setUbicacionAsiento(ubicacion);
-                asiento.setIdAvion(pVuelo.getIdAvion());
-                asientosRepository.save(asiento);
-
-            });
-
-            return true;
-        } catch (Exception e) {
-            LOG.error("ERROR" + e);
-            return false;
-        }
-    }
-    
-    
-    
-    public List<VueloDosDto> obtenerInfo(Integer idVuelo, String pUbicacion) {
         
-        List<VueloDosDto> listResultado = generalRepository.obtenerInfo(idVuelo,pUbicacion);
-        return listResultado;
     }
+   
+    
+    
+    
+  
 }
