@@ -7,6 +7,7 @@ package com.crud.crud.service;
 import com.crud.crud.dto.asientosDto;
 import com.crud.crud.model.AsientosModel;
 import com.crud.crud.repository.AsientosRepository;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,19 +48,15 @@ public class AsientosService  {
            
         } else {
             return false;
-        }
-        
-        
-        
-       
-                
-                
-                
-                
+        }         
         
     }
     
     
+    
+    public List<AsientosModel> traerAsientoPorAvion(int id){
+        return (List<AsientosModel>)asientosRepositorio.traerAsientoPorAvion(id);
+    }
     
     
     

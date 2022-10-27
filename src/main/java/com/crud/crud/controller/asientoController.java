@@ -11,9 +11,11 @@ import com.crud.crud.dto.avionesDto;
 import com.crud.crud.model.AsientosModel;
 import com.crud.crud.model.aviones;
 import com.crud.crud.service.AsientosService;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -57,11 +59,18 @@ public class asientoController {
                 AsientosModel asientos= new AsientosModel(0,i+1+"",idAvion); 
                 asientos.toString();
                 asientoServicio.crearAsiento(asientos);
-            }
-            
-        
-        
+            } 
     }
+    
+    
+    
+    @GetMapping(path="/traerAsiento/{idAvion}")
+    public List<AsientosModel>traerAsiento (@Valid @PathVariable int idAvion){
+        return asientoServicio.traerAsientoPorAvion(idAvion);
+    }
+    
+    
+    
     
     
     

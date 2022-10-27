@@ -5,7 +5,7 @@
  */
 package com.crud.crud.dto;
 
-import java.util.Date;
+import java.util.Calendar;
 
 /**
  *
@@ -16,24 +16,24 @@ public class vueloDto {
     private int id_vuelo;
     private String origen;
     private String destino;
-    private Date hora_salida;
-    private Date hora_llegada;
-    private float costo_asientos;
+    private Calendar fecha_salida;
+    private Calendar fecha_llegada;
+    private Double costo_asientos;
     private String estado_vuelo;
     private String usuario_crea;
     private String usuario_modifica;
-    private int	id_avion;
-    private int	id_tripulacion;
+    private int id_avion;
+    private int id_tripulacion;
 
     public vueloDto() {
     }
 
-    public vueloDto(int id_vuelo, String origen, String destino, Date hora_salida, Date hora_llegada, float costo_asientos, String estado_vuelo, String usuario_crea, String usuario_modifica, int id_avion, int id_tripulacion) {
+    public vueloDto(int id_vuelo, String origen, String destino, Calendar fecha_salida, Calendar fecha_llegada, Double costo_asientos, String estado_vuelo, String usuario_crea, String usuario_modifica, int id_avion, int id_tripulacion) {
         this.id_vuelo = id_vuelo;
         this.origen = origen;
         this.destino = destino;
-        this.hora_salida = hora_salida;
-        this.hora_llegada = hora_llegada;
+        this.fecha_salida = fecha_salida;
+        this.fecha_llegada = fecha_llegada;
         this.costo_asientos = costo_asientos;
         this.estado_vuelo = estado_vuelo;
         this.usuario_crea = usuario_crea;
@@ -66,27 +66,27 @@ public class vueloDto {
         this.destino = destino;
     }
 
-    public Date getHora_salida() {
-        return hora_salida;
+    public Calendar getFecha_salida() {
+        return fecha_salida;
     }
 
-    public void setHora_salida(Date hora_salida) {
-        this.hora_salida = hora_salida;
+    public void setFecha_salida(Calendar fecha_salida) {
+        this.fecha_salida = fecha_salida;
     }
 
-    public Date getHora_llegada() {
-        return hora_llegada;
+    public Calendar getFecha_llegada() {
+        return fecha_llegada;
     }
 
-    public void setHora_llegada(Date hora_llegada) {
-        this.hora_llegada = hora_llegada;
+    public void setFecha_llegada(Calendar fecha_llegada) {
+        this.fecha_llegada = fecha_llegada;
     }
 
-    public float getCosto_asientos() {
+    public Double getCosto_asientos() {
         return costo_asientos;
     }
 
-    public void setCosto_asientos(float costo_asientos) {
+    public void setCosto_asientos(Double costo_asientos) {
         this.costo_asientos = costo_asientos;
     }
 

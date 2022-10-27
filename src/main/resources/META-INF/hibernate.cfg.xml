@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!--
+~ Hibernate, Relational Persistence for Idiomatic Java
+~
+~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+-->
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.url">jdbc:postgresql://ec2-34-227-120-79.compute-1.amazonaws.com:5432/dag2ghi1hq0nlp</property>
+    <property name="connection.username">uloyuktuspugtb</property>
+    <property name="connection.password">c4983979a6e46e96b1616f666a98c21c964527b723f7af9a6a44ab643be09b88</property>
+    <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <mapping class="com.crud.crud.model.aereopuerto"/>
+    <mapping class="com.crud.crud.model.AsientosModel"/>
+    <mapping class="com.crud.crud.model.vuelo"/>
+    <mapping class="com.crud.crud.model.Roles"/>
+    <mapping class="com.crud.crud.model.boleto"/>
+    <mapping class="com.crud.crud.model.aereolinea"/>
+    <mapping class="com.crud.crud.model.ClienteModel"/>
+    <mapping class="com.crud.crud.model.aviones"/>
+  </session-factory>
+</hibernate-configuration>
