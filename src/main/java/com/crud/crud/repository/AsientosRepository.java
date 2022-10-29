@@ -18,11 +18,16 @@ import org.springframework.data.repository.query.Param;
  */
 public interface AsientosRepository extends CrudRepository<AsientosModel, Integer> {
     
-    @Query(value="select*from asientos where id_avion =:id ",nativeQuery = true)
+    @Query(value="select*from asientos a where a.id_avion =:id order by a.id_asiento  ",nativeQuery = true)
     List<AsientosModel>traerAsientoPorAvion(@Param("id")int id);
     
     
-    @Query(value=" select*from asientos a where a.id_avion =:id; ",nativeQuery = true)
+    @Query(value=" select*from asientos a where a.id_avion =:id order by a.id_asiento  ",nativeQuery = true)
     List<AsientosModel>traerAsientosAvion(@Param("id")int id);
+    
+    
+    
+    
+    
     
 }

@@ -17,7 +17,7 @@ public class boletoDto {
  private Date fecha_hora_reserva;
  private int cantidad_equipaje;
  private int peso_equipaje;
- private int puerta_embarque;
+ private String puerta_embarque;
  private int id_asiento;
  private int id_vuelo;
  private int id_cliente;
@@ -25,7 +25,7 @@ public class boletoDto {
     public boletoDto() {
     }
 
-    public boletoDto(int id_no_boleto, double costo_boleto, Date fecha_hora_reserva, int cantidad_equipaje, int peso_equipaje, int puerta_embarque, int id_asiento, int id_vuelo, int id_cliente) {
+    public boletoDto(int id_no_boleto, double costo_boleto, Date fecha_hora_reserva, int cantidad_equipaje, int peso_equipaje, String puerta_embarque, int id_asiento, int id_vuelo, int id_cliente) {
         this.id_no_boleto = id_no_boleto;
         this.costo_boleto = costo_boleto;
         this.fecha_hora_reserva = fecha_hora_reserva;
@@ -36,6 +36,8 @@ public class boletoDto {
         this.id_vuelo = id_vuelo;
         this.id_cliente = id_cliente;
     }
+
+    
 
     public int getId_no_boleto() {
         return id_no_boleto;
@@ -77,13 +79,14 @@ public class boletoDto {
         this.peso_equipaje = peso_equipaje;
     }
 
-    public int getPuerta_embarque() {
+    public String getPuerta_embarque() {
         return puerta_embarque;
     }
 
-    public void setPuerta_embarque(int puerta_embarque) {
+    public void setPuerta_embarque(String puerta_embarque) {
         this.puerta_embarque = puerta_embarque;
     }
+
 
     public int getId_asiento() {
         return id_asiento;

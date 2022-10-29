@@ -5,14 +5,13 @@
  */
 package com.crud.crud.controller;
 
-import com.crud.crud.dto.avionesDto;
-import com.crud.crud.model.aviones;
+import com.crud.crud.dto.boletoDto;
 import com.crud.crud.model.boleto;
 import com.crud.crud.service.boletoServicio;
-import javax.validation.Valid;
+
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +31,10 @@ public class boletoController {
     @Autowired
     boletoServicio BoletoServicio;
     
+    
+    
     @PostMapping(path="/crearBoleto")
-    public Boolean crearBoleto(@Valid @RequestBody boleto Boleto){
+    public Boolean crearBoleto( @RequestBody List<boletoDto> Boleto){
         
        BoletoServicio.crearBoleto(Boleto);
        return true;
