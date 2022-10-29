@@ -5,7 +5,9 @@
 package com.crud.crud.service;
 
 import com.crud.crud.model.TripulacionModel;
+import com.crud.crud.model.aereolinea;
 import com.crud.crud.repository.tripulacionRepository;
+import java.util.List;
 import java.util.Optional;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -41,6 +43,10 @@ public class TripulacionService {
             LOG.error("ERROR" + e);
             return false;
         }
+    }
+    
+    public List<TripulacionModel> listarTripulacion(){
+        return(List<TripulacionModel>)tripulacionRepository.findAll();
     }
     
 }

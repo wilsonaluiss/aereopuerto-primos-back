@@ -10,6 +10,7 @@ import com.crud.crud.dto.DatosRolesDto;
 import com.crud.crud.dto.RolesDto;
 import java.util.List;
 import com.crud.crud.model.Roles;
+import com.crud.crud.model.aereopuerto;
 import com.crud.crud.service.RolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -107,7 +108,6 @@ public class AdministracionController {
     public List<Roles> obtenerAllUsuarios() {
         return (List<Roles>) rolesService.obtenerRoles();
     }
-    
     
 
 }
