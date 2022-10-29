@@ -14,7 +14,6 @@ import java.util.Calendar;
 public class vueloDto {
     
     private int id_vuelo;
-    private String origen;
     private String destino;
     private Calendar fecha_salida;
     private Calendar fecha_llegada;
@@ -28,9 +27,8 @@ public class vueloDto {
     public vueloDto() {
     }
 
-    public vueloDto(int id_vuelo, String origen, String destino, Calendar fecha_salida, Calendar fecha_llegada, Double costo_asientos, String estado_vuelo, String usuario_crea, String usuario_modifica, int id_avion, int id_tripulacion) {
+    public vueloDto(int id_vuelo, String destino, Calendar fecha_salida, Calendar fecha_llegada, Double costo_asientos, String estado_vuelo, String usuario_crea, String usuario_modifica, int id_avion, int id_tripulacion) {
         this.id_vuelo = id_vuelo;
-        this.origen = origen;
         this.destino = destino;
         this.fecha_salida = fecha_salida;
         this.fecha_llegada = fecha_llegada;
@@ -42,20 +40,14 @@ public class vueloDto {
         this.id_tripulacion = id_tripulacion;
     }
 
+  
+
     public int getId_vuelo() {
         return id_vuelo;
     }
 
     public void setId_vuelo(int id_vuelo) {
         this.id_vuelo = id_vuelo;
-    }
-
-    public String getOrigen() {
-        return origen;
-    }
-
-    public void setOrigen(String origen) {
-        this.origen = origen;
     }
 
     public String getDestino() {

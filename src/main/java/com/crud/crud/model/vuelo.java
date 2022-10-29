@@ -23,7 +23,6 @@ public class vuelo  implements java.io.Serializable {
 
 
      private int idVuelo;
-     private String origen;
      private String destino;
      private Date fechaSalida;
      private Date fechaLlegada;
@@ -37,19 +36,20 @@ public class vuelo  implements java.io.Serializable {
     public vuelo() {
     }
 
-    public vuelo(int idVuelo, String origen, String destino, Date fechaSalida, Date fechaLlegada, double costoAsientos, String estadoVuelo, String usuarioCrea, String usuarioModifica, int idAvion, int idTripulacion) {
-       this.idVuelo = idVuelo;
-       this.origen = origen;
-       this.destino = destino;
-       this.fechaSalida = fechaSalida;
-       this.fechaLlegada = fechaLlegada;
-       this.costoAsientos = costoAsientos;
-       this.estadoVuelo = estadoVuelo;
-       this.usuarioCrea = usuarioCrea;
-       this.usuarioModifica = usuarioModifica;
-       this.idAvion = idAvion;
-       this.idTripulacion = idTripulacion;
+    public vuelo(int idVuelo, String destino, Date fechaSalida, Date fechaLlegada, double costoAsientos, String estadoVuelo, String usuarioCrea, String usuarioModifica, int idAvion, int idTripulacion) {
+        this.idVuelo = idVuelo;
+        this.destino = destino;
+        this.fechaSalida = fechaSalida;
+        this.fechaLlegada = fechaLlegada;
+        this.costoAsientos = costoAsientos;
+        this.estadoVuelo = estadoVuelo;
+        this.usuarioCrea = usuarioCrea;
+        this.usuarioModifica = usuarioModifica;
+        this.idAvion = idAvion;
+        this.idTripulacion = idTripulacion;
     }
+
+  
    
      @Id 
     @Column(name="id_vuelo", unique=true, nullable=false)
@@ -60,16 +60,6 @@ public class vuelo  implements java.io.Serializable {
     
     public void setIdVuelo(int idVuelo) {
         this.idVuelo = idVuelo;
-    }
-
-    
-    @Column(name="origen", nullable=false, length=50)
-    public String getOrigen() {
-        return this.origen;
-    }
-    
-    public void setOrigen(String origen) {
-        this.origen = origen;
     }
 
     

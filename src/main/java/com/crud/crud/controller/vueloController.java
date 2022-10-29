@@ -6,17 +6,25 @@
 package com.crud.crud.controller;
 
 
+
 import com.crud.crud.model.AsientosModel;
 import com.crud.crud.model.vuelo;
 import com.crud.crud.service.vueloServicio;
 import com.crud.crud.util.ManejoFechas;
 import java.util.Date;
+
+import com.crud.crud.Projection.avionesProyection;
+import com.crud.crud.model.vuelo;
+import com.crud.crud.service.vueloServicio;
+
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,12 +49,21 @@ public class vueloController {
         return true;
     }
     
+
     
 
-   /* @GetMapping(path="/obtenerFecha/{fechaSalida}")
-    public List<vuelo>traerAsiento (@Valid @PathVariable String fecha){
-        Date fechaSalida = ManejoFechas.stringToDate("dd-MM-yyyy");
+    @GetMapping(path="/obtenerFecha/{fecha}")
+    public List<vuelo>obtenerFecha (@PathVariable String fecha){
+        Date fechaSalida = ManejoFechas.stringToDate(fecha,"dd-MM-yyyy");
         return vueloService.obtenerFecha(fechaSalida);
-    }*/
+    }
+
+    @GetMapping(value = "/listarVuelos")
+    public List<vuelo> listarAviones() {
+        return vueloService.listarVuelos();
+    }
+    
+    
+
     
 }

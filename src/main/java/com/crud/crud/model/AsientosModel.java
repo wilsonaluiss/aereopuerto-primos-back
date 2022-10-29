@@ -25,15 +25,19 @@ public class AsientosModel implements java.io.Serializable{
     private int id_asiento;
     private String nombre_asiento;
     private int	id_avion;
+    private int id_estado;
 
     public AsientosModel() {
     }
 
-    public AsientosModel(int id_asiento, String nombre_asiento, int id_avion) {
+    public AsientosModel(int id_asiento, String nombre_asiento, int id_avion, int id_estado) {
         this.id_asiento = id_asiento;
         this.nombre_asiento = nombre_asiento;
         this.id_avion = id_avion;
+        this.id_estado = id_estado;
     }
+
+    
 
     
     
@@ -57,6 +61,8 @@ public class AsientosModel implements java.io.Serializable{
     public void setNombre_asiento(String nombre_asiento) {
         this.nombre_asiento = nombre_asiento;
     }
+
+   
   @Column(name = "id_avion", nullable = false)
     public int getId_avion() {
         return id_avion;
@@ -66,11 +72,18 @@ public class AsientosModel implements java.io.Serializable{
         this.id_avion = id_avion;
     }
 
-    @Override
-    public String toString() {
-        return "AsientosModel{" + "id_asiento=" + id_asiento + ", nombre_asiento=" + nombre_asiento + ", id_avion=" + id_avion + '}';
+    
+    @Column(name = "id_estado", nullable = false)
+     public int getId_estado() {
+        return id_estado;
     }
 
+    public void setId_estado(int id_estado) {
+        this.id_estado = id_estado;
+    }
+    
+    
+   
     
     
  

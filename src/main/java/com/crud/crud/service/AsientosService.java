@@ -59,6 +59,9 @@ public class AsientosService  {
     }
     
     
+    public List<AsientosModel>traerAsientosAvion(int id){
+        return (List<AsientosModel>)asientosRepositorio.traerAsientosAvion(id);
+    }
     
     
 }

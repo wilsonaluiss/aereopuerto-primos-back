@@ -34,13 +34,13 @@ public class avionesServicio {
    @Autowired
    avionesRepositorio AvionesRepositorio;
    
-   public Boolean crearAvion (aviones Avion){
+   public aviones crearAvion (aviones Avion){
        try {
            AvionesRepositorio.save(Avion);
-           return true;
+           return Avion;
        } catch (Exception e) {
            log.error("error"+e);
-           return false;
+           return null;
        }
 
    }

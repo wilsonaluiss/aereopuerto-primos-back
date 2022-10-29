@@ -19,20 +19,9 @@ public class ManejoFechas {
     public ManejoFechas() {
     }
     
-    public static String dateToString(Date pFechaDate) {
-        if (pFechaDate != null) {
-            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            String fechaString = dateFormat.format(pFechaDate);
-            return fechaString;
-        } else {
-            return "";
-        }
-    }
-    
-    
-    public static Date stringToDate(String pFechaString) {
+  public static Date stringToDate(String pFechaString, String pFormato) {
         Date fecha = null;
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat(pFormato);
         try {
             fecha = formatter.parse(pFechaString);
         } catch (ParseException e) {

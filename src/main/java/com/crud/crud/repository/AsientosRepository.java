@@ -5,6 +5,7 @@
 package com.crud.crud.repository;
 
 import com.crud.crud.model.AsientosModel;
+import com.crud.crud.model.vuelo;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
@@ -20,5 +21,8 @@ public interface AsientosRepository extends CrudRepository<AsientosModel, Intege
     @Query(value="select*from asientos where id_avion =:id ",nativeQuery = true)
     List<AsientosModel>traerAsientoPorAvion(@Param("id")int id);
     
+    
+    @Query(value=" select*from asientos a where a.id_avion =:id; ",nativeQuery = true)
+    List<AsientosModel>traerAsientosAvion(@Param("id")int id);
     
 }

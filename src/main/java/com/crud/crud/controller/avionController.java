@@ -41,10 +41,10 @@ public class avionController {
     avionesServicio AvionServicio;
 
     @PostMapping(path = "/creaAvion")
-    public Boolean crearAvion(@Valid @RequestBody aviones Avion) {
+    public aviones crearAvion(@Valid @RequestBody aviones Avion) {
 
         AvionServicio.crearAvion(Avion);
-        return true;
+        return Avion;
 
     }
 

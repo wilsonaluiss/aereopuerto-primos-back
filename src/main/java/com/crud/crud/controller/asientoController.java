@@ -56,7 +56,7 @@ public class asientoController {
     public void crearAsiento(@Valid @PathVariable Integer idAvion,  @PathVariable Integer cantidadAsientos, @RequestBody AsientosModel asiento) {
 
             for (int i = 0; i < cantidadAsientos; i++) {
-                AsientosModel asientos= new AsientosModel(0,i+1+"",idAvion); 
+                AsientosModel asientos = new AsientosModel(0,i+1+"",idAvion,1);
                 asientos.toString();
                 asientoServicio.crearAsiento(asientos);
             } 
@@ -68,6 +68,7 @@ public class asientoController {
     public List<AsientosModel>traerAsiento (@Valid @PathVariable int idAvion){
         return asientoServicio.traerAsientoPorAvion(idAvion);
     }
+    
     
     
     

@@ -5,9 +5,14 @@
  */
 package com.crud.crud.service;
 
+
 import com.crud.crud.model.AsientosModel;
+
+import com.crud.crud.model.aviones;
+
 import com.crud.crud.model.vuelo;
 import com.crud.crud.repository.vueloRepository;
+import java.util.Date;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,11 +42,16 @@ public class vueloServicio {
         }     
     }
     
-  /*public List<vuelo> obtenerFecha(String fecha){
-        return (List<vuelo>)vueloRepositorio.obtenerFecha(fecha);
-    }*/
+  public List<vuelo> obtenerFecha(Date fecha_salida) {
+        return (List<vuelo>) vueloRepositorio.obtenerFecha(fecha_salida);
+    }
     
-    
+
+  
+     public List<vuelo> listarVuelos(){
+           return (List<vuelo>)vueloRepositorio.findAll();
+       }
+
     
     
     

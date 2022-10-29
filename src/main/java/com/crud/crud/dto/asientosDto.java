@@ -14,15 +14,19 @@ public class asientosDto {
     private int id_asiento;
     private String nombre_asiento;
     private int	id_avion;
+    private int id_estado;
 
     public asientosDto() {
     }
 
-    public asientosDto(int id_asiento, String nombre_asiento, int id_avion) {
+    public asientosDto(int id_asiento, String nombre_asiento, int id_avion, int id_estado) {
         this.id_asiento = id_asiento;
         this.nombre_asiento = nombre_asiento;
         this.id_avion = id_avion;
+        this.id_estado = id_estado;
     }
+    
+   
 
     public int getId_asiento() {
         return id_asiento;
@@ -46,6 +50,14 @@ public class asientosDto {
 
     public void setId_avion(int id_avion) {
         this.id_avion = id_avion;
+    }
+
+    public int getId_estado() {
+        return id_estado;
+    }
+
+    public void setId_estado(int id_estado) {
+        this.id_estado = id_estado;
     }
     
     
