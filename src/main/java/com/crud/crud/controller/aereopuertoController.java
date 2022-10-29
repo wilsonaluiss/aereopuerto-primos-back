@@ -94,7 +94,7 @@ public class aereopuertoController {
         }
     }
 
-    @GetMapping(value = "/listar/")
+    @GetMapping(value = "/listar")
     public List<aereopuerto> listarAereopuerto() {
         try {
             return AereopuertoServicio.listarAereopuerto();

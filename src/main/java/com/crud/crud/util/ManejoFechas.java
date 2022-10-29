@@ -14,12 +14,11 @@ import java.util.Date;
  * @author Wilson
  */
 public class ManejoFechas {
-    
-    
+
     public ManejoFechas() {
     }
-    
-  public static Date stringToDate(String pFechaString, String pFormato) {
+
+    public static Date stringToDate(String pFechaString, String pFormato) {
         Date fecha = null;
         SimpleDateFormat formatter = new SimpleDateFormat(pFormato);
         try {
@@ -30,5 +29,5 @@ public class ManejoFechas {
         }
         return fecha;
     }
-    
+
 }

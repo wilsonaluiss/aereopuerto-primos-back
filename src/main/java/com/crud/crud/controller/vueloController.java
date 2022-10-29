@@ -7,6 +7,7 @@ package com.crud.crud.controller;
 
 
 
+import com.crud.crud.Projection.AvionesListarProyection;
 import com.crud.crud.model.AsientosModel;
 import com.crud.crud.model.vuelo;
 import com.crud.crud.service.vueloServicio;
@@ -50,20 +51,17 @@ public class vueloController {
     }
     
 
-    
-
-    @GetMapping(path="/obtenerFecha/{fecha}")
+   @GetMapping(path="/obtenerFecha/{fecha}")
     public List<vuelo>obtenerFecha (@PathVariable String fecha){
         Date fechaSalida = ManejoFechas.stringToDate(fecha,"dd-MM-yyyy");
         return vueloService.obtenerFecha(fechaSalida);
     }
 
+
     @GetMapping(value = "/listarVuelos")
-    public List<vuelo> listarAviones() {
+    public List<AvionesListarProyection> listarAviones() {
         return vueloService.listarVuelos();
     }
     
-    
-
     
 }

@@ -5,7 +5,7 @@
  */
 package com.crud.crud.service;
 
-
+import com.crud.crud.Projection.AvionesListarProyection;
 import com.crud.crud.model.AsientosModel;
 
 import com.crud.crud.model.aviones;
@@ -22,39 +22,30 @@ import org.springframework.stereotype.Service;
  *
  * @author conco
  */
-
 @Service
 @Slf4j
 @org.springframework.transaction.annotation.Transactional
 public class vueloServicio {
+
     @Autowired
     vueloRepository vueloRepositorio;
-    
-    
-    
-    public Boolean crearVuelo (vuelo Vuelo){
+
+    public Boolean crearVuelo(vuelo Vuelo) {
         try {
-         vueloRepositorio.save(Vuelo);
-        return true;   
+            vueloRepositorio.save(Vuelo);
+            return true;
         } catch (Exception e) {
-            log.error("error"+e);
-           return false;
-        }     
+            log.error("error" + e);
+            return false;
+        }
     }
-    
-  public List<vuelo> obtenerFecha(Date fecha_salida) {
+
+    public List<vuelo> obtenerFecha(Date fecha_salida) {
         return (List<vuelo>) vueloRepositorio.obtenerFecha(fecha_salida);
     }
-    
 
-  
-     public List<vuelo> listarVuelos(){
-           return (List<vuelo>)vueloRepositorio.findAll();
-       }
+    public List<AvionesListarProyection> listarVuelos() {
+        return (List<AvionesListarProyection>) vueloRepositorio.obtenerVuelo();
+    }
 
-    
-    
-    
-    
-    
 }

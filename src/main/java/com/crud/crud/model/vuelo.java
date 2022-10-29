@@ -47,6 +47,16 @@ public class vuelo  implements java.io.Serializable {
         this.usuarioModifica = usuarioModifica;
         this.idAvion = idAvion;
         this.idTripulacion = idTripulacion;
+       this.idVuelo = idVuelo;
+       this.destino = destino;
+       this.fechaSalida = fechaSalida;
+       this.fechaLlegada = fechaLlegada;
+       this.costoAsientos = costoAsientos;
+       this.estadoVuelo = estadoVuelo;
+       this.usuarioCrea = usuarioCrea;
+       this.usuarioModifica = usuarioModifica;
+       this.idAvion = idAvion;
+       this.idTripulacion = idTripulacion;
     }
 
   
